@@ -24,11 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 try:
     from .local_settings import SECRET_KEY as key
+    # シークレットキーの部分を読み込んだ変数に置き換える。
+    SECRET_KEY = key
 except ImportError:
     pass
-
-# シークレットキーの部分を読み込んだ変数に置き換える。
-SECRET_KEY = key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
