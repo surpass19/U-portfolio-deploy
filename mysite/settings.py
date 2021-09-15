@@ -23,11 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 try:
-    from .local_settings import *
+    from .local_settings import SECRET_KEY as key
 except ImportError:
     pass
 
-SECRET_KEY = os.environ['SECRET_KEY']
+# シークレットキーの部分を読み込んだ変数に置き換える。
+SECRET_KEY = key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -128,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
 # 追加
 STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 
@@ -138,14 +140,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# テスト用
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-# 本番用
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'hoge@gmail.com'
-# EMAIL_HOST_PASSWORD = 'ここに貼り付け'
-# EMAIL_USE_TLS = True
