@@ -15,8 +15,6 @@ main {
   flex: 1;
 }
 
-/* index */
-
 .navbar-nav {
   flex-direction: row !important;
 }
@@ -83,7 +81,7 @@ main {
   opacity: 0;
   background-color: rgb(238, 108, 77, 0.8);
   transform: translateY(70px);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .work-thumbnail:hover .work-title {
@@ -91,17 +89,14 @@ main {
   opacity: 1;
 }
 
-/* detail */
-.link-color {
+.line-color {
   color: #ee6c4d;
 }
 
-.link-color:hover {
+.line-color:hover {
   color: #c56c55;
   text-decoration: none;
 }
-
-/* about */
 
 .avatar img {
   max-width: 150px;
