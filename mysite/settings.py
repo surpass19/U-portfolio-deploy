@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 try:
     from .local_settings import SECRET_KEY as key
 except ImportError:
-    SECRET_KEY = os.environ['SECRET_KEY']
+    pass
 
 # シークレットキーの部分を読み込んだ変数に置き換える。
 SECRET_KEY = key
