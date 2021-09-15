@@ -27,7 +27,7 @@ try:
     # シークレットキーの部分を読み込んだ変数に置き換える。
     SECRET_KEY = key
 except ImportError:
-    pass
+    SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
